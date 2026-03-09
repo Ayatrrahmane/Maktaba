@@ -9,11 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-/**
- * ViewModel for managing book-related UI state
- * This follows the MVVM pattern where ViewModel acts as a bridge between
- * the UI and the business logic (Use Cases)
- */
+
 class BookViewModel(
     private val getBooksUseCase: GetBooksUseCase
 ) : ViewModel() {
@@ -33,9 +29,7 @@ class BookViewModel(
         loadBooks()
     }
 
-    /**
-     * Load all books from the use case
-     */
+
     private fun loadBooks() {
         viewModelScope.launch {
             _isLoading.value = true
@@ -48,10 +42,8 @@ class BookViewModel(
         }
     }
 
-    /**
-     * Refresh the books list
-     * Can be called from UI to reload data
-     */
+
+
     fun refreshBooks() {
         loadBooks()
     }

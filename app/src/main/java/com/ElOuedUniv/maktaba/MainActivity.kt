@@ -12,10 +12,7 @@ import com.ElOuedUniv.maktaba.presentation.screens.BookListScreen
 import com.ElOuedUniv.maktaba.presentation.theme.MaktabaTheme
 import com.ElOuedUniv.maktaba.presentation.viewmodel.BookViewModel
 
-/**
- * Main Activity - Entry point of the application
- * Sets up the MVVM architecture and displays the BookListScreen
- */
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
