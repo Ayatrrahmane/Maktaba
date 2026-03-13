@@ -16,7 +16,7 @@ class BookViewModel(
 
     // Private mutable state for internal use
     private val _books = MutableStateFlow<List<Book>>(emptyList())
-    
+
     // Public immutable state for UI observation
     val books: StateFlow<List<Book>> = _books.asStateFlow()
 
@@ -41,7 +41,6 @@ class BookViewModel(
             }
         }
     }
-
 
 
     fun refreshBooks() {
