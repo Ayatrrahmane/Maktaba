@@ -15,16 +15,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.ElOuedUniv.maktaba.data.model.Category
-import com.ElOuedUniv.maktaba.presentation.category.CategoryViewModel
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CategoryListView(
     onBackClick: () -> Unit,
     viewModel: CategoryViewModel = hiltViewModel()
 ) {
-    val categories by viewModel.categories.collectAsState()
-    val isLoading by viewModel.isLoading.collectAsState()
+
+    val categories by viewModel.categories.collectAsState(initial = emptyList())
+    val isLoading by viewModel.isLoading.collectAsState(initial = false)
 
     Scaffold(
         topBar = {
@@ -102,9 +101,9 @@ fun CategoryItem(category: Category) {
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold
             )
-            
+
             Spacer(modifier = Modifier.height(8.dp))
-            
+
             Text(
                 text = category.description,
                 style = MaterialTheme.typography.bodyMedium,

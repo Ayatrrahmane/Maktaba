@@ -1,16 +1,15 @@
 package com.ElOuedUniv.maktaba.domain.di
 
 import com.ElOuedUniv.maktaba.data.repository.BookRepository
-import com.ElOuedUniv.maktaba.data.repository.CategoryRepository
 import com.ElOuedUniv.maktaba.domain.usecase.AddBookUseCase
 import com.ElOuedUniv.maktaba.domain.usecase.GetBooksUseCase
-import com.ElOuedUniv.maktaba.domain.usecase.GetCategoriesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-
+import com.ElOuedUniv.maktaba.domain.usecase.GetCategoriesUseCase
+import com.ElOuedUniv.maktaba.data.repository.CategoryRepository
 @Module
 @InstallIn(SingletonComponent::class)
 object DomainModule {
