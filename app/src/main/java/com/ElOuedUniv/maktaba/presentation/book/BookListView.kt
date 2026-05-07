@@ -1,5 +1,6 @@
 package com.ElOuedUniv.maktaba.presentation.book
 
+import com.ElOuedUniv.maktaba.data.model.Book
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -10,6 +11,8 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.ElOuedUniv.maktaba.data.model.Book
+import androidx.compose.material.icons.automirrored.filled.List
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -35,21 +38,24 @@ fun BookListView(
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { 
+                title = {
                     Text(
-                        "MY LIBRARY", 
+                        "MY LIBRARY",
                         style = MaterialTheme.typography.headlineMedium.copy(
                             fontWeight = FontWeight.ExtraBold,
                             letterSpacing = 2.sp
                         )
-                    ) 
+                    )
                 },
                 actions = {
                     IconButton(onClick = {}) {
                         Icon(Icons.Default.GridView, contentDescription = "Grid View")
                     }
                     IconButton(onClick = onCategoriesClick) {
-                        Icon(Icons.Default.List, contentDescription = "Categories")
+
+
+                        Icon(Icons.AutoMirrored.Filled.List, contentDescription = "Categories")
+
                     }
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
@@ -159,9 +165,9 @@ fun BookCard(book: Book, onClick: () -> Unit) {
                     maxLines = 2,
                     minLines = 2
                 )
-                
+
                 Spacer(modifier = Modifier.height(8.dp))
-                
+
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween,
@@ -179,7 +185,7 @@ fun BookCard(book: Book, onClick: () -> Unit) {
                             fontWeight = FontWeight.Medium
                         )
                     }
-                    
+
                     val statusText = if (book.nbPages > 0) "Reading" else "Finished"
                     val statusIcon = if (book.nbPages > 0) Icons.Default.Bookmark else Icons.Default.CheckCircle
                     val statusColor = if (book.nbPages > 0) MaterialTheme.colorScheme.primary else Color(0xFF4CAF50)

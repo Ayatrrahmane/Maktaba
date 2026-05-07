@@ -32,14 +32,14 @@ fun CategoryListView(
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { 
+                title = {
                     Text(
-                        "CATEGORIES", 
+                        "CATEGORIES",
                         style = MaterialTheme.typography.titleLarge.copy(
                             fontWeight = FontWeight.ExtraBold,
                             letterSpacing = 2.sp
                         )
-                    ) 
+                    )
                 },
                 navigationIcon = {
                     IconButton(onClick = onBackClick) {
@@ -128,9 +128,9 @@ fun CategoryItem(category: Category) {
                     tint = MaterialTheme.colorScheme.primary
                 )
             }
-            
+
             Spacer(modifier = Modifier.width(20.dp))
-            
+
             // Text Details
             Column(
                 modifier = Modifier.fillMaxWidth()
@@ -140,9 +140,9 @@ fun CategoryItem(category: Category) {
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.ExtraBold
                 )
-                
+
                 Spacer(modifier = Modifier.height(4.dp))
-                
+
                 Text(
                     text = category.description,
                     style = MaterialTheme.typography.bodyMedium,

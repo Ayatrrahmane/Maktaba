@@ -7,6 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.ElOuedUniv.maktaba.presentation.onboarding.OnboardingViewModel
 
 @Composable
 fun OnboardingView(
@@ -22,9 +23,9 @@ fun OnboardingView(
         Spacer(modifier = Modifier.height(16.dp))
         Text("Your personal digital library.")
         Spacer(modifier = Modifier.height(32.dp))
-        Button(onClick = { 
+        Button(onClick = {
             viewModel.onCompleteOnboarding()
-            onNavigateToLibrary() 
+            onNavigateToLibrary()
         }) {
             Text("Get Started")
         }

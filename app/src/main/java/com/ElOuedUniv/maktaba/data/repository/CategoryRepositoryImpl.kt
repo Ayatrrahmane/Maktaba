@@ -34,7 +34,7 @@ class CategoryRepositoryImpl @Inject constructor() : CategoryRepository {
     private val categoriesFlow = MutableSharedFlow<List<Category>>(replay = 1).apply {
         tryEmit(_categoriesList)
     }
-    
+
     override fun getAllCategories(): Flow<List<Category>> = flow {
         delay(2000) // Simulate delay
         emitAll(categoriesFlow)
